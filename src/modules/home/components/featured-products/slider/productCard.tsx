@@ -35,7 +35,7 @@ export default function ProductPreviewCard({
       className="group block outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black rounded-lg"
     >
       <div className="rounded-lg overflow-hidden bg-ui-bg-subtle border border-ui-border-base">
-        <div className="relative aspect-[4/5]">
+        <div className="relative aspect-[4/5] bg-white">
           {thumb ? (
             <>
               <Image
@@ -44,10 +44,11 @@ export default function ProductPreviewCard({
                 fill
                 sizes="(min-width:1024px) 24vw, (min-width:768px) 32vw, 90vw"
                 loading="lazy"
-                className="object-cover transition duration-700 ease-out opacity-0 blur-sm will-change-transform"
+                className="absolute inset-0 object-contain object-center transition duration-500 ease-out opacity-0 blur-sm"
                 onLoadingComplete={(img) => {
                   img.classList.remove("opacity-0", "blur-sm")
                 }}
+                priority={false}
               />
 
               {hoverImg && (
@@ -57,14 +58,10 @@ export default function ProductPreviewCard({
                   fill
                   sizes="(min-width:1024px) 24vw, (min-width:768px) 32vw, 90vw"
                   loading="lazy"
-                  className="object-cover opacity-0 blur-sm transition duration-700 ease-out
-               group-hover:opacity-100 group-hover:blur-0
-               absolute inset-0"
-                  onLoadingComplete={(img) => {
-                    img.classList.remove("opacity-0", "blur-sm")
-                  }}
+                  className="absolute inset-0 object-contain object-center opacity-0 transition-opacity duration-300 ease-out pointer-events-none z-10 group-hover:opacity-100"
+                  priority={false}
+                  aria-hidden="true"
                 />
-
               )}
             </>
           ) : (
@@ -74,7 +71,7 @@ export default function ProductPreviewCard({
           )}
 
           {hasSale && (
-            <div className="absolute left-2 top-2 rounded-full bg-red-600 text-white text-xs px-2 py-1">
+            <div className="absolute left-2 top-2 rounded-full bg-red-600 text-white text-xs px-2 py-1 z-20">
               -{discountPct}%
             </div>
           )}
@@ -92,8 +89,6 @@ export default function ProductPreviewCard({
               </span>
             )}
           </div>
-
-          {/* Optionen als Chips */}
           {product.options && product.options.length > 0 && (
             <div className="mt-3 space-y-2">
               {product.options.map((opt) => (

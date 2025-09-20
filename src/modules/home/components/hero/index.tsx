@@ -9,109 +9,122 @@ const Hero = () => {
   return (
     <div className="w-full">
       <HeroSlider titles={["Kopfhörer", "Smartphones", "Smartwatches", "Speaker"]}>
-        
-        {/* Slide 1 – Kopfhörer */}
-        <HeroItem className="bg-gradient-to-r from-gray-900 to-black text-white">
-          <div className="w-full h-full flex flex-col md:flex-row items-center justify-center px-8 sm:px-32 gap-8">
-            {/* Text links */}
-            <div className="flex-1 text-left space-y-4">
-              <Heading level="h1" className="text-4xl sm:text-5xl font-bold">
-                Tauche ein in den Sound
-              </Heading>
-              <Heading level="h2" className="text-lg sm:text-xl text-gray-300">
-                Premium Kopfhörer für dein Musikerlebnis
-              </Heading>
-              <Link href="/shop/headphones">
-                <Button variant="secondary" size="large">Jetzt entdecken</Button>
-              </Link>
-            </div>
-            {/* Bild rechts */}
-            <div className="flex-1 flex justify-center">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/5/55/Top_view_of_headphones_hanging_from_a_desk_%28Unsplash%29.jpg"
-                alt="Premium Kopfhörer"
-                width={450}
-                height={450}
-                className="object-contain rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </HeroItem>
-
-        {/* Slide 2 – Smartphones */}
-        <HeroItem className="bg-gradient-to-r from-gray-100 to-gray-300 text-black">
-          <div className="w-full h-full flex flex-col md:flex-row items-center justify-center px-8 sm:px-32 gap-8">
-            <div className="flex-1 text-left space-y-4">
-              <Heading level="h1" className="text-4xl sm:text-5xl font-bold">
-                Next-Gen Smartphones
-              </Heading>
-              <Heading level="h2" className="text-lg sm:text-xl text-indigo-100">
-                Performance trifft Design
-              </Heading>
-              <Link href="/shop/smartphones">
-                <Button variant="secondary" size="large">Modelle ansehen</Button>
-              </Link>
-            </div>
-            <div className="flex-1 flex justify-center">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/6/67/SmartPhone.jpg"
-                alt="Smartphone"
-                width={400}
-                height={500}
-                className="object-contain rounded-lg shadow-lg"
-              />
+        <HeroItem className="relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
+          <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 py-12 md:py-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="space-y-5 text-white">
+                <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                  Tauche ein in den Sound
+                </Heading>
+                <p className="text-base sm:text-lg text-slate-300">
+                  Premium Kopfhörer für kompromisslosen Klang.
+                </p>
+                <Link href="/shop/headphones">
+                  <Button size="large">Jetzt entdecken</Button>
+                </Link>
+              </div>
+              <div className="justify-self-center w-full max-w-[560px]">
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/55/Top_view_of_headphones_hanging_from_a_desk_%28Unsplash%29.jpg"
+                    alt="Premium Kopfhörer"
+                    fill
+                    className="object-contain"
+                    priority={false}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </HeroItem>
 
-        {/* Slide 3 – Smartwatches */}
-        <HeroItem className="bg-gradient-to-r from-gray-900 to-black text-white">
-          <div className="w-full h-full flex flex-col md:flex-row items-center justify-center px-8 sm:px-32 gap-8">
-            <div className="flex-1 text-left space-y-4">
-              <Heading level="h1" className="text-4xl sm:text-5xl font-bold">
-                Smarte Begleiter
-              </Heading>
-              <Heading level="h2" className="text-lg sm:text-xl text-gray-700">
-                Smartwatches für deinen Alltag
-              </Heading>
-              <Link href="/shop/smartwatches">
-                <Button variant="secondary" size="large">Entdecke mehr</Button>
-              </Link>
-            </div>
-            <div className="flex-1 flex justify-center">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Lg_smartwatch_%281%29.jpg"
-                alt="Smartwatch"
-                width={350}
-                height={350}
-                className="object-contain rounded-lg shadow-lg"
-              />
+        <HeroItem className="relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-slate-200" />
+          <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 py-12 md:py-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="order-2 md:order-1 space-y-5 text-slate-900">
+                <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                  Next-Gen Smartphones
+                </Heading>
+                <p className="text-base sm:text-lg text-slate-700">
+                  Performance trifft Design – entdecke die Auswahl.
+                </p>
+                <Link href="/shop/smartphones">
+                  <Button size="large" variant="secondary">Modelle ansehen</Button>
+                </Link>
+              </div>
+              <div className="order-1 md:order-2 justify-self-center w-full max-w-[560px]">
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-900/10 bg-white">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/67/SmartPhone.jpg"
+                    alt="Smartphone"
+                    fill
+                    className="object-contain"
+                    priority={false}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </HeroItem>
 
-        {/* Slide 4 – Speaker */}
-        <HeroItem className="bg-gradient-to-r from-gray-100 to-gray-300 text-black">
-          <div className="w-full h-full flex flex-col md:flex-row items-center justify-center px-8 sm:px-32 gap-8">
-            <div className="flex-1 text-left space-y-4">
-              <Heading level="h1" className="text-4xl sm:text-5xl font-bold">
-                Kraftvoller Sound
-              </Heading>
-              <Heading level="h2" className="text-lg sm:text-xl text-red-100">
-                Portable Speaker für jede Party
-              </Heading>
-              <Link href="/shop/speaker">
-                <Button variant="secondary" size="large">Jetzt kaufen</Button>
-              </Link>
+        <HeroItem className="relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
+          <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 py-12 md:py-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="space-y-5 text-white">
+                <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                  Smarte Begleiter
+                </Heading>
+                <p className="text-base sm:text-lg text-slate-300">
+                  Smartwatches für deinen Alltag – smart, leicht, stark.
+                </p>
+                <Link href="/shop/smartwatches">
+                  <Button size="large">Entdecke mehr</Button>
+                </Link>
+              </div>
+              <div className="justify-self-center w-full max-w-[560px]">
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Lg_smartwatch_%281%29.jpg"
+                    alt="Smartwatch"
+                    fill
+                    className="object-contain"
+                    priority={false}
+                  />
+                </div>
+              </div>
             </div>
-            <div className="flex-1 flex justify-center">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/6/69/JBL_GO2_Bluetooth_speaker_00_10_27_681000.jpeg"
-                alt="Speaker"
-                width={400}
-                height={400}
-                className="object-contain rounded-lg shadow-lg"
-              />
+          </div>
+        </HeroItem>
+
+        <HeroItem className="relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-slate-200" />
+          <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 py-12 md:py-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="order-2 md:order-1 space-y-5 text-slate-900">
+                <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                  Kraftvoller Sound
+                </Heading>
+                <p className="text-base sm:text-lg text-slate-700">
+                  Portable Speaker für jede Party – überall dabei.
+                </p>
+                <Link href="/shop/speaker">
+                  <Button size="large" variant="secondary">Jetzt kaufen</Button>
+                </Link>
+              </div>
+              <div className="order-1 md:order-2 justify-self-center w-full max-w-[560px]">
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-900/10 bg-white">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/69/JBL_GO2_Bluetooth_speaker_00_10_27_681000.jpeg"
+                    alt="Speaker"
+                    fill
+                    className="object-contain"
+                    priority={false}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </HeroItem>
